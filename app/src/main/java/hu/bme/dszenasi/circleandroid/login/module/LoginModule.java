@@ -4,7 +4,9 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import hu.bme.dszenasi.circleandroid.login.repository.ILoginRepository;
 import hu.bme.dszenasi.circleandroid.login.repository.LoginRepository;
+import hu.bme.dszenasi.circleandroid.login.repository.MockLoginRepository;
 import hu.bme.dszenasi.circleandroid.login.ui.LoginPresenter;
 import hu.bme.dszenasi.circleandroid.login.ui.LoginPresenterImpl;
 
@@ -15,11 +17,11 @@ import hu.bme.dszenasi.circleandroid.login.ui.LoginPresenterImpl;
 public class LoginModule {
 
     @Provides
-    public LoginRepository providesLoginRepository() {
-        return new LoginRepository();
+    public ILoginRepository providesLoginRepository() {
+        return new MockLoginRepository();
     }
     @Provides
-    public LoginPresenter providesLoginPresenter(LoginRepository loginRepository) {
+    public LoginPresenter providesLoginPresenter(ILoginRepository loginRepository) {
         return new LoginPresenterImpl(loginRepository);
     }
 
