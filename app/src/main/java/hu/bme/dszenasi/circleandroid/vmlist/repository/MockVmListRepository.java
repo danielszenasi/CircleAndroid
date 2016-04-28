@@ -30,12 +30,12 @@ public class MockVmListRepository implements IVmListRepository {
             compute1.setState(ComputeState.INACTIVE);
             entities.add(compute1);
             Compute compute2 = new Compute("2750b280-28ac-5d77-abe7-5fb67118c01c", kind);
-            compute1.setHostname("Ubuntu 14.04 v7");
-            compute1.setArchitecture(Architecture.X_64);
-            compute1.setCores(1);
-            compute1.setMemory(1024);
-            compute1.setSpeed("normal");
-            compute1.setState(ComputeState.SUSPENDED);
+            compute2.setHostname("Ubuntu 14.04 v7");
+            compute2.setArchitecture(Architecture.X_64);
+            compute2.setCores(1);
+            compute2.setMemory(1024);
+            compute2.setSpeed("normal");
+            compute2.setState(ComputeState.SUSPENDED);
             entities.add(compute2);
         } catch (URISyntaxException e) {
             e.printStackTrace();

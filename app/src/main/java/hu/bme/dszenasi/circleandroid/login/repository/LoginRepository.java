@@ -19,6 +19,7 @@ public class LoginRepository implements ILoginRepository{
 
             Authentication authentication = new BasicAuthentication("admin", "retekretek");
             Client client = new HTTPClient(URI.create("https://vm.ik.bme.hu:15766/occi/"), authentication);
+
             return client.isConnected();
 
     }
